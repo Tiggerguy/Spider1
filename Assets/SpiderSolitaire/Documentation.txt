@@ -1,0 +1,40 @@
+Spider Solitaire Game Documentation
+
+Version 1.0
+
+Hi dear buyer , thanks for your purchase
+
+HOW TO USE THIS PACKAGE
+
+Notes : 
+(1)This game reuqests HOTween tween Plugin (Free and MIT License)
+You can download it from unity assets atore.
+Download Link:  https://www.assetstore.unity3d.com/en/#!/content/3311/
+or you can visit their home page:
+Home Link: http://hotween.demigiant.com/
+
+
+(2)You may need unity 5.3 or higher to be able to use the package (since I didn't test it in the older version of unity).
+
+1. After you import the assets (include HOTween Plugin), you should see 3 folders in the main folder SpiderSolitaire
+	+SpiderSolitaire
+		-Resources
+		-Scripts
+		-Plugins
+		 SpiderSolitaire.unity
+ 
+And SpiderSolitaire.unity file
+Double click SpiderSolitaire.unity to open the Scence
+Click play button on the top of the unity , now you can play the game
+
+2. If you want to distribute to iOS or Android
+You can click unity - file > Build Settings > choose iOS or Android 
+Click Player settings to set the parameters for iOS or Android target
+Then you can click build or build and run button of the Build Setting window to output the Xcode Project (iOS) or .apk file (Android)
+
+
+If you have any question about this package , please feel free to contact me.
+
+Please Leave your rating for my Assets
+
+Thanks , all the best.
