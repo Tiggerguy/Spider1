@@ -982,89 +982,89 @@ public class Game : MonoBehaviour {
 		return gameArr;
 	}
 
-//	public void deal(){
-//		force_stop_hint_action ();
-//		if(!can_deal){
-//			return;
-//		}
-//
-//		can_undo = false;
-//		ArrayList undoChildArr = new ArrayList ();
-//		int n_999 = 999;
-//		undoChildArr.Add (n_999);
-//		ArrayList pArr = new ArrayList ();
-//		can_deal = false;
-//
-//		for (int i = 0; i < 10; i++) {
-//			GameObject card = Instantiate (poker);
-//			card.transform.localScale = Vector3.one *card_scale;
-//
-//			cardsCreatedArr.Add (card);
-//
-//			card.name = "card_" + deal_num.ToString ();
-//			GameObject group = (GameObject)(groupObjectArr [i]);
-//
-//			card.GetComponent<Poker> ().row = i;
-//			card.GetComponent<Poker> ().column = group.GetComponent<Group> ().pokerArr.Count;
-//			 
-//			card.transform.parent =group.transform;
-//			//Debug.Log (rc_array_104.IndexOf(0));
-//
-//			string ___type = ((rc_array_104 [deal_num] as ArrayList) [1]).ToString();
-//			int ___num = (int)((rc_array_104 [deal_num] as ArrayList) [0]);
-//			card.GetComponent<Poker> ()._type = ___type;
-//			card.GetComponent<Poker> ().num =___num;
-//			pArr.Add (new ArrayList{___type,___num});
-//
-//			card.GetComponent<Poker> ().g_index = deal_num;
-//			int id = card.GetComponent<Poker> ().num;
-//			card.GetComponent<Poker> ().isInstaniated = true;
-//
-//			card.SetActive (false);
-//			card.transform.FindChild ("glow").gameObject.SetActive (false);
-//			card.transform.position =new Vector3 (backSample.transform.position.x,backSample.transform.position.y,-z_space*((float)i));
-//			string str = id.ToString();
-//
-//			if(str.Length<2){
-//				str = "0" + str;
-//			}
-//			card.GetComponent<Poker> ().image_path = "images/cards/"+(string)(card.GetComponent<Poker> ()._type)+"00"+str;
-//
-//			GameObject last = null;
-//			if (group.GetComponent<Group> ().getLastPoker ()) {
-//				last = group.GetComponent<Group> ().getLastPoker ();
-//			}
-//			Vector3 pos;
-//			if (last != null) {
-//				card.transform.FindChild ("textureSprite").gameObject.GetComponent<SpriteRenderer>().sortingOrder = 100+group.GetComponent<Group>().pokerArr.Count;
-//				if (last.GetComponent<Poker> ().isOpen) {
-//					pos = new Vector3 (0.0f, last.transform.localPosition.y - back_next_dis_normal*card_scale, last.transform.localPosition.z - z_space);
-//				} else {
-//					pos = new Vector3 (0.0f, last.transform.localPosition.y - back_next_dis*card_scale, last.transform.localPosition.z - z_space);
-//				}
-//			} else {
-//				//Debug.Log ("No poker on the group");
-//				pos = new Vector3 (0.0f, 0.0f, 0.0f);
-//			}
-//			Vector3 pos2 = new Vector3 (pos.x,pos.y,pos.z);
-//
-//			// C#
-//			TweenParms parms = new TweenParms();
-//			//group.GetComponent<Group> ().stayPos = pos;
-//
-//			parms.Prop ("localPosition", pos2); // Position tween
-//			parms.Ease(EaseType.Linear); // Easing type
-//			parms.Delay(((float)i)*0.02f); // Initial delay
-//			parms.OnStart(onStart,card,((bool)(i==9)));
-//			parms.OnComplete(fadeCompleted_deal,((bool)(i==9)));
-//		
-//			HOTween.To(card.transform, 0.15f, parms);
-//			group.GetComponent<Group> ().pokerArr.Add (card);
-//			deal_num++;
-//		}
-//		undoChildArr.Add (pArr);
-//		undoArr.Add (undoChildArr);
-//	}
+	public void deal(){
+		force_stop_hint_action ();
+		if(!can_deal){
+			return;
+		}
+
+		can_undo = false;
+		ArrayList undoChildArr = new ArrayList ();
+		int n_999 = 999;
+		undoChildArr.Add (n_999);
+		ArrayList pArr = new ArrayList ();
+		can_deal = false;
+
+		for (int i = 0; i < 10; i++) {
+			GameObject card = Instantiate (poker);
+			card.transform.localScale = Vector3.one *card_scale;
+
+			cardsCreatedArr.Add (card);
+
+			card.name = "card_" + deal_num.ToString ();
+			GameObject group = (GameObject)(groupObjectArr [i]);
+
+			card.GetComponent<Poker> ().row = i;
+			card.GetComponent<Poker> ().column = group.GetComponent<Group> ().pokerArr.Count;
+			 
+			card.transform.parent =group.transform;
+			//Debug.Log (rc_array_104.IndexOf(0));
+
+			string ___type = ((rc_array_104 [deal_num] as ArrayList) [1]).ToString();
+			int ___num = (int)((rc_array_104 [deal_num] as ArrayList) [0]);
+			card.GetComponent<Poker> ()._type = ___type;
+			card.GetComponent<Poker> ().num =___num;
+			pArr.Add (new ArrayList{___type,___num});
+
+			card.GetComponent<Poker> ().g_index = deal_num;
+			int id = card.GetComponent<Poker> ().num;
+			card.GetComponent<Poker> ().isInstaniated = true;
+
+			card.SetActive (false);
+			card.transform.FindChild ("glow").gameObject.SetActive (false);
+			card.transform.position =new Vector3 (backSample.transform.position.x,backSample.transform.position.y,-z_space*((float)i));
+			string str = id.ToString();
+
+			if(str.Length<2){
+				str = "0" + str;
+			}
+			card.GetComponent<Poker> ().image_path = "images/cards/"+(string)(card.GetComponent<Poker> ()._type)+"00"+str;
+
+			GameObject last = null;
+			if (group.GetComponent<Group> ().getLastPoker ()) {
+				last = group.GetComponent<Group> ().getLastPoker ();
+			}
+			Vector3 pos;
+			if (last != null) {
+				card.transform.FindChild ("textureSprite").gameObject.GetComponent<SpriteRenderer>().sortingOrder = 100+group.GetComponent<Group>().pokerArr.Count;
+				if (last.GetComponent<Poker> ().isOpen) {
+					pos = new Vector3 (0.0f, last.transform.localPosition.y - back_next_dis_normal*card_scale, last.transform.localPosition.z - z_space);
+				} else {
+					pos = new Vector3 (0.0f, last.transform.localPosition.y - back_next_dis*card_scale, last.transform.localPosition.z - z_space);
+				}
+			} else {
+				//Debug.Log ("No poker on the group");
+				pos = new Vector3 (0.0f, 0.0f, 0.0f);
+			}
+			Vector3 pos2 = new Vector3 (pos.x,pos.y,pos.z);
+
+			// C#
+			TweenParms parms = new TweenParms();
+			//group.GetComponent<Group> ().stayPos = pos;
+
+			parms.Prop ("localPosition", pos2); // Position tween
+			parms.Ease(EaseType.Linear); // Easing type
+			parms.Delay(((float)i)*0.02f); // Initial delay
+			parms.OnStart(onStart,card,((bool)(i==9)));
+			parms.OnComplete(fadeCompleted_deal,((bool)(i==9)));
+		
+			HOTween.To(card.transform, 0.15f, parms);
+			group.GetComponent<Group> ().pokerArr.Add (card);
+			deal_num++;
+		}
+		undoChildArr.Add (pArr);
+		undoArr.Add (undoChildArr);
+	}
 
 	private void lastDealStart(TweenEvent e){
 		if (e.parms != null) {
@@ -1117,7 +1117,7 @@ public class Game : MonoBehaviour {
 					}
 					Poker poker = hitObject.GetComponent<Poker> ();
 					if(poker&&!poker.isInstaniated&&!isUnDoing){
-						//deal ();
+						deal ();
 					}
 					if(poker&&poker.isInstaniated
 						&&poker.isOpen&&!isUnDoing){
